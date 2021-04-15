@@ -1,0 +1,42 @@
+.tests {
+  width: 35vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.collection-item {
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: -2px 3px #ccc;
+  border: 1px solid #eee;
+  margin: 20px auto;
+  text-align: center;
+  cursor: pointer;
+
+  .title {
+    position: relative;
+  }
+
+  .author-name {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .times-completed {
+    font-weight: 700;
+    position: relative;
+  }
+
+  .questions {
+    position: relative;
+  }
+}
