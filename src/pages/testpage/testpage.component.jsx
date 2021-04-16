@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+
 import Navigation from "../../components/navigation/navigation.component.jsx";
 import TestItem from "../../components/test-item/test-item.component.jsx";
 import TestPreview from "../../components/test-preview/test-preview.component.jsx";
@@ -6,7 +7,10 @@ import TestPreview from "../../components/test-preview/test-preview.component.js
 import TESTS_DATA from "../../tests.data.js";
 
 class TestPage extends Component {
-  state = { tests: TESTS_DATA, open: false };
+  state = {
+    tests: TESTS_DATA,
+    open: false,
+  };
 
   openTestHandler = () => {
     this.setState((prevState) => {
@@ -19,17 +23,22 @@ class TestPage extends Component {
       <Fragment>
         <Navigation />
         <div>
-          {tests.map(({  ...otherCollectionProps }) => (
-            <div >
+          {tests.map(({ ...otherCollectionProps }) => (
+            <div>
               <TestPreview
-              
+                key={this.props.testId}
                 {...otherCollectionProps}
                 click={this.openTestHandler}
+                id={this.state.tests.testId}
               />
-              <TestItem
-                {...otherCollectionProps}
-                show={this.state.open}
-              />
+
+              {this.state.open ? (
+                <TestItem
+                  key={this.state.tests.testId}
+                  {...otherCollectionProps}
+                  show={this.state.open}
+                />
+              ) : null}
             </div>
           ))}
         </div>

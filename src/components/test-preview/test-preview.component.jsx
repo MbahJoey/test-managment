@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
-
 import "./test-preview.styles.scss";
 
 const TestPreview = (props) => {
